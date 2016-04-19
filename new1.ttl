@@ -1,0 +1,38 @@
+@prefix nadia: <http://dilab77.ionio.gr/swp/lazari/vocab#> .
+@prefix  rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix  rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix  xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+nadia:PROFESSOR rdf:type rdfs:Class .
+nadia:LECTURE rdf:type rdfs:Class .
+nadia:CLASSROOM rdf:type rdfs:Class .
+nadia:LESSON rdf:type rdfs:Class .
+nadia:PROFESSOR rdfs:subClassOf foaf:Person .
+
+nadia:IsTaught rdf:type rdf:Property ;
+            rdfs:domain nadia:LECTURE ;
+            rdfs:range nadia:LESSON .
+
+nadia:IsGivenBy rdf:type rdf:Property ;
+             rdfs:domain nadia:LECTURE ;
+             rdfs:range nadia:PROFESSOR .
+
+nadia:IsTaughtIn rdf:type rdf:Property ;
+              rdfs:domain nadia:LECTURE ;
+              rdfs:range nadia:CLASSROOM .
+
+nadia:StartTime rdf:type rdf:Property ;
+             rdfs:domain nadia:LECTURE ;
+             rdf:range xsd:Time .
+
+nadia:EndTime rdf:type rdf:Property ;
+           rdf:domain nadia:LECTURE ;
+           rdf:range xsd:Time .
+
+nadia:Day rdf:type rdf:Property ;
+       rdf:domain nadia:LECTURE ;
+       rdf:range rdf:LIteral .
+
+nadia:Semester rdf:type rdf:Property ;
+            rdf:domain nadia:Lecture ;
+            rdf:range rdf:Literal .
